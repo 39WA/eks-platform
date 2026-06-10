@@ -244,6 +244,39 @@ Validated cluster connectivity and worker node registration using kubectl.
 - CertManager
 - ExternalDNS
 
+### Kubernetes Connectivity Validation
+
+Validated connectivity to the Amazon EKS cluster using kubectl and confirmed that the worker node successfully joined the cluster.
+
+**Validation Commands**
+
+![Kubectl Get Nodes](screenshots/06-nginx-ingress-pods.png)
+
+**Validation Results**
+
+- kubectl successfully authenticated against the EKS API server
+- Current context points to the `eks-platform-dev` cluster
+- Worker node registered successfully
+- Node status reported as `Ready`
+- Cluster is ready to host Kubernetes workloads
+
+![Kubectl Get Nodes](screenshots/05-kubectl-get-nodes.png)
+
+### AWS Load Balancer Provisioning
+
+The NGINX Ingress Controller automatically provisioned an AWS Load Balancer through the Kubernetes Service of type LoadBalancer.
+
+**Capabilities:**
+
+- Public application entry point
+- Automatic AWS integration
+- Traffic routing to Kubernetes services
+- Foundation for DNS and TLS automation
+
+![AWS Load Balancer](screenshots/007-nginx-ingress-pods.png)
+
+![AWS Load Balancer](screenshots/07-nginx-load-balancer.png)
+
 ### GitOps
 
 - ArgoCD
