@@ -232,8 +232,8 @@ The node group provides the compute capacity required to run Kubernetes workload
 
 Validated cluster connectivity and worker node registration using kubectl.
 
-```bash
-kubectl get nodes
+
+![EKS Managed Node Group](screenshots/05-kubectl-get-nodes.png)
 
 
 
