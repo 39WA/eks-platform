@@ -227,6 +227,17 @@ The node group provides the compute capacity required to run Kubernetes workload
 
 ![EKS Managed Node Group](screenshots/04-eks-node-group.png)
 
+### Kubernetes cluster verified operational
+
+Validated cluster connectivity and worker node registration using kubectl.
+
+```bash
+kubectl get nodes
+
+![EKS Managed Node Group](screenshots/05-kubectl-get-nodes.png)
+
+
+
 ### Kubernetes Platform Services
 
 - NGINX Ingress Controller
