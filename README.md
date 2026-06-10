@@ -197,6 +197,36 @@ Successfully provisioned an Amazon EKS cluster using Terraform.
 
 ![EKS Deployment](screenshots/03-eks-deployment.png)
 
+---
+
+### EKS Managed Node Group
+
+Successfully provisioned an Amazon EKS Managed Node Group using Terraform.
+
+The node group provides the compute capacity required to run Kubernetes workloads within the cluster. AWS automatically manages node lifecycle operations including provisioning, updates, and health monitoring.
+
+**Node Group Configuration**
+
+| Component | Value |
+|------------|---------|
+| Node Group Name | default |
+| Instance Type | t3.medium |
+| Capacity Type | On-Demand |
+| Desired Nodes | 1 |
+| Minimum Nodes | 1 |
+| Maximum Nodes | 2 |
+| Management Type | EKS Managed Node Group |
+
+**Deployment Outcome**
+
+- Managed node group created successfully
+- EC2 worker node launched automatically
+- Node joined the EKS cluster
+- Ready to host Kubernetes workloads
+- Scalable through Terraform configuration
+
+![EKS Managed Node Group](screenshots/04-eks-node-group.png)
+
 ### Kubernetes Platform Services
 
 - NGINX Ingress Controller
