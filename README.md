@@ -158,7 +158,7 @@ Production-ready VPC provisioned using Terraform.
 
 ---
 
-## Upcoming Infrastructure
+## Infrastructure Structure
 
 The following components will be implemented in the next phases:
 
@@ -167,6 +167,35 @@ The following components will be implemented in the next phases:
 - EKS Control Plane
 - Managed Node Groups
 - IAM Roles for Service Accounts (IRSA)
+
+## Amazon EKS
+
+### EKS Cluster Deployment
+
+Successfully provisioned an Amazon EKS cluster using Terraform.
+
+**Provisioned Components**
+
+- Amazon EKS Control Plane
+- Managed Node Group
+- Worker Node
+- Cluster IAM Roles
+- OIDC Provider
+- Security Groups
+- EKS Access Entries
+
+**Cluster Details**
+
+| Component | Value |
+|------------|---------|
+| Cluster Name | eks-platform-dev |
+| Kubernetes Version | 1.33 |
+| Node Group Type | Managed |
+| Instance Type | t3.medium |
+| Desired Capacity | 1 |
+| Region | eu-west-2 |
+
+![EKS Deployment](screenshots/03-eks-deployment.png)
 
 ### Kubernetes Platform Services
 
