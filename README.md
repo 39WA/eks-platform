@@ -273,7 +273,11 @@ The NGINX Ingress Controller automatically provisioned an AWS Load Balancer thro
 - Traffic routing to Kubernetes services
 - Foundation for DNS and TLS automation
 
+NGINX Ingress Controller
+
 ![AWS Load Balancer](screenshots/07-nginx-ingress-pods.png)
+
+NGINX Ingress Controller Validation
 
 ![AWS Load Balancer](screenshots/07-nginx-load-balancer.png)
 
