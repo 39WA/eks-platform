@@ -327,7 +327,7 @@ Authentication was performed using the initial administrator credentials generat
 
 This validates successful deployment of the ArgoCD control plane and confirms external connectivity to the GitOps platform.
 
-![ArgoCD Login](screenshots/11-argocd-login.jgg)
+![ArgoCD Login](screenshots/11-argocd-login.jpg)
 
 ---
 
