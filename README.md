@@ -316,6 +316,38 @@ The load balancer endpoint allows administrators to manage application deploymen
 
 ![ArgoCD LoadBalancer](screenshots/10-argocd-loadbalancer.jpg)
 
+
+---
+
+### ArgoCD Login Interface
+
+After exposing the ArgoCD API server through an AWS Load Balancer, the web interface became accessible externally.
+
+Authentication was performed using the initial administrator credentials generated during installation.
+
+This validates successful deployment of the ArgoCD control plane and confirms external connectivity to the GitOps platform.
+
+![ArgoCD Login](screenshots/11-argocd-login.jog)
+
+---
+
+### ArgoCD Dashboard
+
+Following successful authentication, the ArgoCD dashboard provides centralized visibility into:
+
+- Applications
+- Projects
+- Kubernetes Clusters
+- Git Repositories
+- Deployment Health Status
+- Synchronization State
+
+The dashboard serves as the GitOps control plane for managing Kubernetes workloads and automating application delivery from source control.
+
+![ArgoCD Dashboard](screenshots/12-argocd-dashboard.jpg)
+
+---
+
 ### CI/CD
 
 - Terraform Pipeline
