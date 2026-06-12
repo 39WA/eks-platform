@@ -287,6 +287,27 @@ The NGINX Ingress Controller automatically provisioned an AWS Load Balancer thro
 - Application Sync
 - Automated Deployments
 
+
+### ArgoCD Deployment
+
+ArgoCD was deployed into the Amazon EKS cluster to provide GitOps-based continuous delivery.
+
+The platform continuously monitors Git repositories and synchronizes Kubernetes resources to the desired state defined in source control.
+
+### Deployed components include:
+
+- ArgoCD API Server
+- Repository Server
+- Application Controller
+- ApplicationSet Controller
+- Redis
+- Dex Authentication Service
+
+All ArgoCD pods successfully reached the Running state after deployment.
+
+![ArgoCD Pods](screenshots/09-argocd-pods.jpg)
+
+
 ### CI/CD
 
 - Terraform Pipeline
