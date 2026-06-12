@@ -348,6 +348,31 @@ The dashboard serves as the GitOps control plane for managing Kubernetes workloa
 
 ---
 
+### GitOps Application Sync
+
+ArgoCD continuously monitored the Git repository and automatically reconciled cluster state with the desired configuration stored in source control.
+
+The NGINX application was deployed entirely through GitOps workflows. After committing Kubernetes manifests to GitHub, ArgoCD detected the changes, synchronized the application, and deployed the workload into the EKS cluster.
+
+Features demonstrated:
+
+- GitOps continuous reconciliation
+- Automated Kubernetes deployments
+- Application health monitoring
+- Declarative infrastructure management
+- GitHub to Kubernetes deployment pipeline
+
+![ArgoCD Application Sync](screenshots/13-argocd-application.jpg)
+
+### Automated Deployment Verification
+
+The deployed workload was successfully synchronized and reached a healthy operational state. Kubernetes reported all application pods as running and the ingress endpoint was successfully provisioned.
+
+![NGINX Workload](screenshots/14-nginx-workload.jpg)
+
+![NGINX Ingress](screenshots/15-nginx-ingress.jpg)
+
+
 ### CI/CD
 
 - Terraform Pipeline
