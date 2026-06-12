@@ -308,6 +308,14 @@ All ArgoCD pods successfully reached the Running state after deployment.
 ![ArgoCD Pods](screenshots/09-argocd-pods.jpg)
 
 
+### ArgoCD Service Exposure
+
+The ArgoCD API server was exposed through an AWS Load Balancer, providing secure access to the GitOps dashboard.
+
+The load balancer endpoint allows administrators to manage application deployments, monitor synchronization status, and control Kubernetes resources through the ArgoCD web interface.
+
+![ArgoCD LoadBalancer](screenshots/10-argocd-loadbalancer.jpg)
+
 ### CI/CD
 
 - Terraform Pipeline
