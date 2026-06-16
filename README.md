@@ -395,6 +395,50 @@ The deployed workload was successfully synchronized and reached a healthy operat
 - Docker Build Pipeline
 - Trivy Image Scanning
 
+---
+
+# CI/CD Automation
+
+Continuous Integration and Continuous Delivery (CI/CD) processes are implemented using GitHub Actions.
+
+The automation pipeline validates infrastructure changes, enforces consistency across environments, and provides a repeatable deployment workflow for the EKS platform.
+
+## GitHub Actions Workflow
+
+A dedicated Terraform CI workflow has been configured within the repository.
+
+The workflow automatically executes when changes are pushed to the main branch, ensuring infrastructure code is validated before deployment activities are performed.
+
+### Pipeline Objectives
+
+- Infrastructure as Code validation
+- Automated Terraform execution
+- Consistent deployment process
+- Git-based workflow automation
+- Continuous infrastructure testing
+
+### Workflow Benefits
+
+- Reduces manual deployment effort
+- Detects infrastructure issues early
+- Maintains deployment consistency
+- Provides deployment history and auditability
+- Supports GitOps operating practices
+
+
+### GitHub Actions Automation
+
+GitHub Actions is used to automate infrastructure validation and deployment workflows.
+
+The Terraform CI workflow executes automatically on commits to the main branch, ensuring infrastructure changes are validated before deployment.
+
+The workflow history below demonstrates multiple successful executions of the CI pipeline.
+
+
+![GitHub Actions Workflow](screenshots/16-github-actions-workflows.png)
+
+---
+
 ### Monitoring
 
 - Prometheus
