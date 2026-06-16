@@ -170,11 +170,13 @@ The following components will be implemented in the next phases:
 
 ## Amazon EKS
 
-### EKS Cluster Deployment
+### EKS Cluster Provisioned
 
-Successfully provisioned an Amazon EKS cluster using Terraform.
+Successfully provisioned an Amazon Elastic Kubernetes Service (EKS) cluster using Terraform.
 
-**Provisioned Components**
+The deployment created a fully managed Kubernetes control plane integrated with AWS networking, IAM, and security services.
+
+#### Provisioned Components
 
 - Amazon EKS Control Plane
 - Managed Node Group
@@ -184,18 +186,31 @@ Successfully provisioned an Amazon EKS cluster using Terraform.
 - Security Groups
 - EKS Access Entries
 
-**Cluster Details**
+#### Cluster Details
 
 | Component | Value |
 |------------|---------|
 | Cluster Name | eks-platform-dev |
 | Kubernetes Version | 1.33 |
+| Region | eu-west-2 |
+| Provider | Amazon EKS |
+| Platform Version | eks.38 |
 | Node Group Type | Managed |
 | Instance Type | t3.medium |
 | Desired Capacity | 1 |
-| Region | eu-west-2 |
+| Status | Active |
 
-![EKS Deployment](screenshots/03-eks-deployment.png)
+#### Validation
+
+- Cluster successfully provisioned
+- Kubernetes control plane operational
+- No cluster health issues detected
+- No node health issues detected
+- Ready for Kubernetes workload deployment
+
+The screenshot below confirms that the Amazon EKS cluster reached an **Active** state and successfully passed AWS health validation checks.
+
+![EKS Cluster Overview](screenshots/03-eks-cluster-overview.jpg)
 
 ---
 

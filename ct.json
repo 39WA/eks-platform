@@ -1,0 +1,221 @@
+{
+    "Events": [
+        {
+            "EventId": "0dd6fa9e-54be-38a1-84e2-2d7d634bcbb0",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:45+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:45Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"2a6720fc-ea69-4f1c-a691-337b54bd7680\",\"eventID\":\"0dd6fa9e-54be-38a1-84e2-2d7d634bcbb0\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"e2cbb646-c5bf-45cd-a213-409925c98d08\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "6cea0a24-3092-31b5-a7ea-fcf2bd04a500",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:45+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:45Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\",\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"70432442-1c3c-43fc-a15e-7659f345daad\",\"eventID\":\"6cea0a24-3092-31b5-a7ea-fcf2bd04a500\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"09bf8896-b8fc-4a75-9097-5279565c5344\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "2d4b738b-81c5-3e18-a3ae-6da2684fe8f5",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:39+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:39Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"efdefe30-eb28-41dc-8b73-d528a515266f\",\"eventID\":\"2d4b738b-81c5-3e18-a3ae-6da2684fe8f5\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"03fb7e0a-13c6-4069-8a6f-b51dea243422\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "d184c6db-9b0f-383d-bdb7-194611f1d131",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:39+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:39Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\",\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"eb8bfe39-e9d7-41ef-acad-2d4113f1c84d\",\"eventID\":\"d184c6db-9b0f-383d-bdb7-194611f1d131\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"27bf8e29-d9ee-4995-a6fa-8037ab6c9788\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "9f6e524c-4513-4099-b240-8d7cdb743103",
+            "EventName": "GetCallerIdentity",
+            "ReadOnly": "true",
+            "AccessKeyId": "ASIA2YJBFR5FOA7MJDP5",
+            "EventTime": "2026-06-13T13:44:33+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Username": "i-0fb7737b886289702",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AssumedRole\",\"principalId\":\"AROA2YJBFR5FCXOPXVVLG:i-0fb7737b886289702\",\"arn\":\"arn:aws:sts::739340816202:assumed-role/default-eks-node-group-20260609115157993900000002/i-0fb7737b886289702\",\"accountId\":\"739340816202\",\"accessKeyId\":\"ASIA2YJBFR5FOA7MJDP5\",\"sessionContext\":{\"sessionIssuer\":{\"type\":\"Role\",\"principalId\":\"AROA2YJBFR5FCXOPXVVLG\",\"arn\":\"arn:aws:iam::739340816202:role/default-eks-node-group-20260609115157993900000002\",\"accountId\":\"739340816202\",\"userName\":\"default-eks-node-group-20260609115157993900000002\"},\"attributes\":{\"creationDate\":\"2026-06-13T12:32:31Z\",\"mfaAuthenticated\":\"false\"},\"ec2RoleDelivery\":\"2.0\"},\"inScopeOf\":{\"issuerType\":\"AWS::EC2::Instance\",\"credentialsIssuedTo\":\"arn:aws:ec2:eu-west-2:739340816202:instance/i-0fb7737b886289702\"}},\"eventTime\":\"2026-06-13T12:44:33Z\",\"eventSource\":\"sts.amazonaws.com\",\"eventName\":\"GetCallerIdentity\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"18.130.47.167\",\"userAgent\":\"Go-http-client/1.1\",\"requestParameters\":null,\"responseElements\":null,\"additionalEventData\":{\"ExtendedRequestId\":\"MTpldS13ZXN0LTI6UzoxNzgxMzU0NjczMDg3OlI6VXlYSjRCeUs=\",\"RequestDetails\":{\"awsServingRegion\":\"eu-west-2\",\"endpointType\":\"regional\"}},\"requestID\":\"a36428f3-5d79-4c41-b380-6746e3058b55\",\"eventID\":\"9f6e524c-4513-4099-b240-8d7cdb743103\",\"readOnly\":true,\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"eventCategory\":\"Management\",\"tlsDetails\":{\"tlsVersion\":\"TLSv1.3\",\"cipherSuite\":\"TLS_AES_128_GCM_SHA256\",\"clientProvidedHostHeader\":\"sts.eu-west-2.amazonaws.com\"}}"
+        },
+        {
+            "EventId": "400cff8d-01eb-4622-aa7b-6a83e477044f",
+            "EventName": "DescribeInstanceStatus",
+            "ReadOnly": "true",
+            "AccessKeyId": "ASIA2YJBFR5FN6R25S6F",
+            "EventTime": "2026-06-13T13:44:22+01:00",
+            "EventSource": "ec2.amazonaws.com",
+            "Username": "AutoScaling",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AssumedRole\",\"principalId\":\"AROA2YJBFR5FFX2VAGQRW:AutoScaling\",\"arn\":\"arn:aws:sts::739340816202:assumed-role/AWSServiceRoleForAutoScaling/AutoScaling\",\"accountId\":\"739340816202\",\"accessKeyId\":\"ASIA2YJBFR5FN6R25S6F\",\"sessionContext\":{\"sessionIssuer\":{\"type\":\"Role\",\"principalId\":\"AROA2YJBFR5FFX2VAGQRW\",\"arn\":\"arn:aws:iam::739340816202:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling\",\"accountId\":\"739340816202\",\"userName\":\"AWSServiceRoleForAutoScaling\"},\"attributes\":{\"creationDate\":\"2026-06-13T12:28:24Z\",\"mfaAuthenticated\":\"false\"}},\"invokedBy\":\"autoscaling.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:22Z\",\"eventSource\":\"ec2.amazonaws.com\",\"eventName\":\"DescribeInstanceStatus\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"autoscaling.amazonaws.com\",\"userAgent\":\"autoscaling.amazonaws.com\",\"requestParameters\":{\"instancesSet\":{\"items\":[{\"instanceId\":\"i-0fb7737b886289702\"}]},\"filterSet\":{},\"includeAllInstances\":true},\"responseElements\":null,\"requestID\":\"72d3dca1-54a0-48c1-a2fe-17c445ffdd2f\",\"eventID\":\"400cff8d-01eb-4622-aa7b-6a83e477044f\",\"readOnly\":true,\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "571e0499-a661-4594-9b51-a80f7d1d8107",
+            "EventName": "GetCallerIdentity",
+            "ReadOnly": "true",
+            "AccessKeyId": "AKIA2YJBFR5FPVYRZF3M",
+            "EventTime": "2026-06-13T13:44:15+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Username": "DevSecOps1",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"IAMUser\",\"principalId\":\"AIDA2YJBFR5FF67RRVYSP\",\"arn\":\"arn:aws:iam::739340816202:user/DevSecOps1\",\"accountId\":\"739340816202\",\"accessKeyId\":\"AKIA2YJBFR5FPVYRZF3M\",\"userName\":\"DevSecOps1\"},\"eventTime\":\"2026-06-13T12:44:15Z\",\"eventSource\":\"sts.amazonaws.com\",\"eventName\":\"GetCallerIdentity\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"18.130.47.167\",\"userAgent\":\"Go-http-client/1.1\",\"requestParameters\":null,\"responseElements\":null,\"additionalEventData\":{\"ExtendedRequestId\":\"MTpldS13ZXN0LTI6UzoxNzgxMzU0NjU1OTU1OlI6N3RrSHExNkc=\",\"RequestDetails\":{\"awsServingRegion\":\"eu-west-2\",\"endpointType\":\"regional\"}},\"requestID\":\"1cdbc2e1-b905-4ad6-bcd9-bcea97eb5f17\",\"eventID\":\"571e0499-a661-4594-9b51-a80f7d1d8107\",\"readOnly\":true,\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"eventCategory\":\"Management\",\"tlsDetails\":{\"tlsVersion\":\"TLSv1.3\",\"cipherSuite\":\"TLS_AES_128_GCM_SHA256\",\"clientProvidedHostHeader\":\"sts.eu-west-2.amazonaws.com\"}}"
+        },
+        {
+            "EventId": "9eeb0a8a-277b-3c57-8778-4e8a4679ee9d",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:05+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:05Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\",\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"}},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"1a7258a9-98f1-4194-896c-c872c79a80ac\",\"eventID\":\"9eeb0a8a-277b-3c57-8778-4e8a4679ee9d\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"a992b8a9-deae-4618-8607-93891601d77a\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "b3fab74b-e510-3207-935c-ec83e0914063",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:44:05+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:44:05Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\",\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"1ec26c0d-ed98-48df-89a9-dfad935063c5\",\"eventID\":\"b3fab74b-e510-3207-935c-ec83e0914063\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"7b93a039-0aef-4cad-be2e-b4842d5c6232\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "953c51fe-b2e9-3aff-bf38-58e154da3a2a",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:59+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:59Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\",\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"323e390a-63cd-4e4f-84b8-0495108f0070\",\"eventID\":\"953c51fe-b2e9-3aff-bf38-58e154da3a2a\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"3744411e-4661-42bf-b2b9-9b1062a59e9a\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "c369048a-ac94-320e-a24e-3af5fa02931a",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:59+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:59Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"f07dc08f-2324-4a3e-9594-fa6b9dbfebbd\",\"eventID\":\"c369048a-ac94-320e-a24e-3af5fa02931a\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"6aa1b027-3ece-4f96-b744-8c44f0e5575c\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "0cb3fd67-f6f3-4fac-912a-2e06a99d2f55",
+            "EventName": "GetCallerIdentity",
+            "ReadOnly": "true",
+            "AccessKeyId": "AKIA2YJBFR5FPVYRZF3M",
+            "EventTime": "2026-06-13T13:43:31+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Username": "DevSecOps1",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"IAMUser\",\"principalId\":\"AIDA2YJBFR5FF67RRVYSP\",\"arn\":\"arn:aws:iam::739340816202:user/DevSecOps1\",\"accountId\":\"739340816202\",\"accessKeyId\":\"AKIA2YJBFR5FPVYRZF3M\",\"userName\":\"DevSecOps1\"},\"eventTime\":\"2026-06-13T12:43:31Z\",\"eventSource\":\"sts.amazonaws.com\",\"eventName\":\"GetCallerIdentity\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"35.176.101.56\",\"userAgent\":\"Go-http-client/1.1\",\"requestParameters\":null,\"responseElements\":null,\"additionalEventData\":{\"ExtendedRequestId\":\"MTpldS13ZXN0LTI6UzoxNzgxMzU0NjExNzU4OlI6WnZWUUx1bXI=\",\"RequestDetails\":{\"endpointType\":\"regional\",\"awsServingRegion\":\"eu-west-2\"}},\"requestID\":\"9ec39015-6e08-47ad-afd1-93b25e2b3fe8\",\"eventID\":\"0cb3fd67-f6f3-4fac-912a-2e06a99d2f55\",\"readOnly\":true,\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"eventCategory\":\"Management\",\"tlsDetails\":{\"tlsVersion\":\"TLSv1.3\",\"cipherSuite\":\"TLS_AES_128_GCM_SHA256\",\"clientProvidedHostHeader\":\"sts.eu-west-2.amazonaws.com\"}}"
+        },
+        {
+            "EventId": "12756887-1aac-38c9-83f1-0af3a01ad311",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:26+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:26Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"222af8d5-27b6-4745-8d23-7198ffd8eb32\",\"eventID\":\"12756887-1aac-38c9-83f1-0af3a01ad311\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"9239cd44-44c4-4083-aa01-3659d7639d52\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "1effb89d-5411-3e5c-99bc-c9e333d93891",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:26+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:26Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\",\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"85287c0d-3c38-4859-b1ac-35c3295a8f36\",\"eventID\":\"1effb89d-5411-3e5c-99bc-c9e333d93891\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"6c51b18e-a823-4e79-9a93-8f783ad80a98\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "62387bc6-6602-3ba0-b55b-a10f2f286cea",
+            "EventName": "AssumeRole",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:25+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceType": "AWS::IAM::AccessKey",
+                    "ResourceName": "ASIA2YJBFR5FLHGOJGZN"
+                },
+                {
+                    "ResourceType": "AWS::STS::AssumedRole",
+                    "ResourceName": "1781010494821095634"
+                },
+                {
+                    "ResourceType": "AWS::STS::AssumedRole",
+                    "ResourceName": "AROA2YJBFR5FF45SGW2FR:1781010494821095634"
+                },
+                {
+                    "ResourceType": "AWS::STS::AssumedRole",
+                    "ResourceName": "arn:aws:sts::739340816202:assumed-role/AWSServiceRoleForAmazonEKS/1781010494821095634"
+                },
+                {
+                    "ResourceType": "AWS::IAM::Role",
+                    "ResourceName": "arn:aws:iam::739340816202:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:25Z\",\"eventSource\":\"sts.amazonaws.com\",\"eventName\":\"AssumeRole\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"roleArn\":\"arn:aws:iam::739340816202:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS\",\"roleSessionName\":\"1781010494821095634\",\"durationSeconds\":900},\"responseElements\":{\"credentials\":{\"accessKeyId\":\"ASIA2YJBFR5FLHGOJGZN\",\"sessionToken\":\"IQoJb3JpZ2luX2VjEGUaCWV1LXdlc3QtMiJHMEUCIQDon77J7VQvLFceJhLUyfYmERiQ5VXDvMCajwkVstLDswIgfu+1PNGEuGs03/RJRzQb8blu7fSPQouCcR5SauYjPrsq0gIILhAAGgw3MzkzNDA4MTYyMDIiDHDfIOhVY9m/QURlMyqvAuAs0F9KvyuKtgzn6C2bSqAJMQRe6lElD2/UQ5oag/ZBcuh4FCyQHq7lJjEyksnFVBUbQ/CTT1NGi+kpJUMj+iWGvqlGp67Tq8399kvrbXlJVx47quOC6D1myXH+YxLGc5NY8t9T4Ox3NsYtK5jd3HuFxXDprLWd6uf6uiEA6qJ34Ch0woxqRW4jvBd1m+4BnhIJIPFmkeSR0hXSWKWQWEpB89S8Ff8bS1gf8tda+GcD+zeoLA2nxKpnLJNvW9mYfyhFGADH56xxrmONHYFXUyi75nH6l0iIkiOuytUd3ZrDGfzQfnh/JViHr4qh6R/UYkoaDtlG+/iJ+xVVQ64KcGfVw3+tOFXx/jbtGpWDuxtFc0/nl8HRBAOoyLOdtEXd6HjACdK2y9ilYyBmkmzL1TDtoLXRBjq9ARoynomGZHbkV4IeRouQm30LCjvTt+kXNrGSyYBYKmsPyI1lkVdyteqm8nJeI6eXhttWcRP7kNi/f9HNSWTl2suzSJJppSmPKRZmMSnIDj9Owe1ZOTlxehFvoTk+9PQUHbCe5JPrlWPVXyA5oCzgmsArDZ/aMXCcMUxZM53QDGzBY7P+jIacdK7QCd5mA5H1JoSYWyuwYT1lBhR6HFQW6KXhMfmzK7NEcWSfRI0mj9qhTcF2sqqaFnwvR6eepA==\",\"expiration\":\"Jun 13, 2026, 12:58:25 PM\"},\"assumedRoleUser\":{\"assumedRoleId\":\"AROA2YJBFR5FF45SGW2FR:1781010494821095634\",\"arn\":\"arn:aws:sts::739340816202:assumed-role/AWSServiceRoleForAmazonEKS/1781010494821095634\"}},\"additionalEventData\":{\"ExtendedRequestId\":\"MTpldS13ZXN0LTI6UzoxNzgxMzU0NjA1MjEyOlI6a0hqeHRIc0I=\"},\"requestID\":\"f9f7b97b-e075-49c8-9f5d-ee07074cd6a5\",\"eventID\":\"62387bc6-6602-3ba0-b55b-a10f2f286cea\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::IAM::Role\",\"ARN\":\"arn:aws:iam::739340816202:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"753d8f35-6d4d-476a-9964-27d8360b42c8\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "38228b94-b191-3a4f-a3e4-3d5d7a3242d0",
+            "EventName": "Encrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:20+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [
+                {
+                    "ResourceName": "arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da"
+                }
+            ],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:20Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Encrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"keyId\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\",\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"407149f9-658a-4e36-ac2a-525cd905a8f9\",\"eventID\":\"38228b94-b191-3a4f-a3e4-3d5d7a3242d0\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"ed10f744-0512-4857-8725-82cdffa4128c\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "6ad2080a-befb-3c9b-8d2b-f72caa7e8349",
+            "EventName": "Decrypt",
+            "ReadOnly": "true",
+            "EventTime": "2026-06-13T13:43:20+01:00",
+            "EventSource": "kms.amazonaws.com",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"AWSService\",\"invokedBy\":\"eks.amazonaws.com\"},\"eventTime\":\"2026-06-13T12:43:20Z\",\"eventSource\":\"kms.amazonaws.com\",\"eventName\":\"Decrypt\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"eks.amazonaws.com\",\"userAgent\":\"eks.amazonaws.com\",\"requestParameters\":{\"encryptionContext\":{\"aws:eks:context\":\"1466b7fa-7d76-4611-85a0-03e8a0e57bf2\"},\"encryptionAlgorithm\":\"SYMMETRIC_DEFAULT\"},\"responseElements\":null,\"additionalEventData\":{\"keyMaterialId\":\"11d018b34b17d253ff26d904d8232c7e4d023c0eb31d26b39502acd12b4b5019\"},\"requestID\":\"621495ae-e082-4f6b-bdda-a9c7727226f2\",\"eventID\":\"6ad2080a-befb-3c9b-8d2b-f72caa7e8349\",\"readOnly\":true,\"resources\":[{\"accountId\":\"739340816202\",\"type\":\"AWS::KMS::Key\",\"ARN\":\"arn:aws:kms:eu-west-2:739340816202:key/161d6c04-60ea-4ae3-a79a-cef883b673da\"}],\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"sharedEventID\":\"30169313-27dc-40d2-bee9-f539b6b754db\",\"eventCategory\":\"Management\"}"
+        },
+        {
+            "EventId": "bf88c940-9150-4927-a779-dbec9ae6a243",
+            "EventName": "GetCallerIdentity",
+            "ReadOnly": "true",
+            "AccessKeyId": "AKIA2YJBFR5FPVYRZF3M",
+            "EventTime": "2026-06-13T13:43:20+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Username": "DevSecOps1",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\":\"1.11\",\"userIdentity\":{\"type\":\"IAMUser\",\"principalId\":\"AIDA2YJBFR5FF67RRVYSP\",\"arn\":\"arn:aws:iam::739340816202:user/DevSecOps1\",\"accountId\":\"739340816202\",\"accessKeyId\":\"AKIA2YJBFR5FPVYRZF3M\",\"userName\":\"DevSecOps1\"},\"eventTime\":\"2026-06-13T12:43:20Z\",\"eventSource\":\"sts.amazonaws.com\",\"eventName\":\"GetCallerIdentity\",\"awsRegion\":\"eu-west-2\",\"sourceIPAddress\":\"18.130.47.167\",\"userAgent\":\"Go-http-client/1.1\",\"requestParameters\":null,\"responseElements\":null,\"additionalEventData\":{\"ExtendedRequestId\":\"MTpldS13ZXN0LTI6UzoxNzgxMzU0NjAwMDA3OlI6QXV0Q3pOeDc=\",\"RequestDetails\":{\"awsServingRegion\":\"eu-west-2\",\"endpointType\":\"regional\"}},\"requestID\":\"d96f26d4-b8b4-4724-9b9a-185a42f976da\",\"eventID\":\"bf88c940-9150-4927-a779-dbec9ae6a243\",\"readOnly\":true,\"eventType\":\"AwsApiCall\",\"managementEvent\":true,\"recipientAccountId\":\"739340816202\",\"eventCategory\":\"Management\",\"tlsDetails\":{\"tlsVersion\":\"TLSv1.3\",\"cipherSuite\":\"TLS_AES_128_GCM_SHA256\",\"clientProvidedHostHeader\":\"sts.eu-west-2.amazonaws.com\"}}"
+        }
+    ]
+}
