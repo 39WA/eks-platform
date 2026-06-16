@@ -240,7 +240,7 @@ The node group provides the compute capacity required to run Kubernetes workload
 - Ready to host Kubernetes workloads
 - Scalable through Terraform configuration
 
-![EKS Managed Node Group](screenshots/04-eks-node-group.png)
+![EKS Managed Node Group](screenshots/04-eks-node-group.jpg)
 
 
 ### Kubernetes cluster verified operational
