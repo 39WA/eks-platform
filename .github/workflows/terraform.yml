@@ -11,11 +11,16 @@ on:
 
 jobs:
   terraform:
+    name: Terraform Validation
     runs-on: ubuntu-latest
 
     defaults:
       run:
         working-directory: terraform/environments/dev
+
+    permissions:
+      contents: read
+      security-events: write
 
     steps:
       - name: Checkout Repository
@@ -32,3 +37,12 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -input=false
+
+      - name: Upload Terraform Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: terraform/environments/dev

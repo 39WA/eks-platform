@@ -448,6 +448,16 @@ The workflow definition below demonstrates how Terraform automation is implement
 
 ![Terraform Workflow File](screenshots/17-terraform-workflow-file.png)
 
+### Terraform CI Execution
+
+Terraform infrastructure validation is executed automatically through GitHub Actions.
+
+The workflow runs whenever changes are pushed to the repository, providing automated execution and deployment consistency for Infrastructure as Code (IaC) operations.
+
+The successful workflow run below demonstrates the automated Terraform pipeline executing within GitHub Actions.
+
+![Terraform CI Run](screenshots/18-terraform-ci-run.png)
+
 ---
 
 ---
