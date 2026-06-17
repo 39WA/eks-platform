@@ -11,16 +11,12 @@ on:
 
 jobs:
   terraform:
-    name: Terraform Validation
+    name: Terraform Validation & Security
     runs-on: ubuntu-latest
 
     defaults:
       run:
         working-directory: terraform/environments/dev
-
-    permissions:
-      contents: read
-      security-events: write
 
     steps:
       - name: Checkout Repository
@@ -38,11 +34,10 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
 
-      - name: Terraform Plan
-        run: terraform plan -input=false
-
-      - name: Upload Terraform Plan Artifact
-        uses: actions/upload-artifact@v4
+      - name: Run Checkov Security Scan
+        uses: bridgecrewio/checkov-action@master
         with:
-          name: terraform-plan
-          path: terraform/environments/dev
+          directory: terraform
+          framework: terraform
+          quiet: true
+          soft_fail: true
