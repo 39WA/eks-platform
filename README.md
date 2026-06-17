@@ -458,7 +458,60 @@ The successful workflow run below demonstrates the automated Terraform pipeline 
 
 ![Terraform CI Run](screenshots/18-terraform-ci-run.png)
 
----
+### Terraform Validation Pipeline
+
+Infrastructure as Code validation is automated through GitHub Actions.
+
+Every push to the repository triggers a CI pipeline that performs Terraform validation and security checks before infrastructure changes are applied.
+
+The pipeline provides early detection of configuration issues and helps enforce Infrastructure as Code best practices.
+
+**Pipeline Stages**
+
+- Checkout Repository
+- Setup Terraform
+- Terraform Format Check
+- Terraform Init
+- Terraform Validate
+- Checkov Security Scan
+- Complete Job
+
+**Validation Outcome**
+
+- Terraform configuration validated successfully
+- Infrastructure syntax verified
+- Code formatting enforced
+- Security scanning executed automatically
+- CI pipeline completed successfully
+
+![Terraform Validation Pipeline](screenshots/19-terraform-validation-steps.png)
+
+### Infrastructure Security Scanning
+
+Infrastructure security validation is integrated directly into the CI/CD pipeline using Checkov.
+
+Checkov automatically scans Terraform configurations for security misconfigurations, compliance violations, and Infrastructure as Code (IaC) best-practice violations during every workflow execution.
+
+This ensures that infrastructure changes are validated before deployment and helps enforce secure cloud architecture standards.
+
+**Security Controls**
+
+- Terraform misconfiguration detection
+- Infrastructure security validation
+- Compliance rule checking
+- Automated security feedback
+- Shift-left security integration
+- Continuous Infrastructure as Code scanning
+
+**Security Outcome**
+
+- Terraform code scanned successfully
+- Security validation executed automatically
+- Infrastructure compliance checks performed
+- Security controls integrated into GitHub Actions
+- CI/CD security gates verified
+
+![Checkov Security Scan](screenshots/20-checkov-security-scan.png)
 
 ---
 
