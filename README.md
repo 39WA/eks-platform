@@ -513,6 +513,101 @@ This ensures that infrastructure changes are validated before deployment and hel
 
 ![Checkov Security Scan](screenshots/20-checkov-security-scan.png)
 
+
+### Secure Secret Management
+
+GitHub Actions secrets provide secure storage for sensitive configuration values used during CI/CD execution. Secrets are encrypted and injected into workflows at runtime, preventing credentials and sensitive data from being exposed within source code.
+
+**Security Features**
+
+- Encrypted secret storage
+- Runtime credential injection
+- Separation of configuration from code
+- Secure CI/CD execution
+- Protection of sensitive values
+
+![GitHub Actions Secrets](screenshots/21-github-actions-secrets.png)
+
+
+### Checkov Security Findings
+
+Checkov performs policy-based scanning against Terraform code and provides immediate feedback during CI/CD execution. The scan identified resources that violate supply-chain best practices by using version constraints instead of immutable commit hashes for Terraform module sources.
+
+**Security Controls Enforced**
+
+- Infrastructure as Code (IaC) security scanning
+- Policy-based compliance validation
+- Terraform module source verification
+- Early detection of configuration issues
+- Continuous security feedback during deployment pipelines
+
+![Checkov Findings](screenshots/22-checkov-findings.png)
+
+
+### Checkov Security Findings
+
+Checkov performs Infrastructure-as-Code (IaC) security scanning during CI/CD execution and provides policy-based validation of Terraform resources. The scan identified supply-chain security findings by enforcing immutable Terraform module sources and highlighting configuration issues early in the deployment pipeline.
+
+**Security Capabilities**
+
+- Static analysis of Terraform code
+- Policy-as-Code enforcement
+- Continuous security validation
+- Supply-chain security checks
+- Early detection of configuration risks
+
+![Checkov Findings](screenshots/22-checkov-findings.png)
+
+
+### Figure 24. Terraform plan for scaling the EKS managed node group
+
+![Terraform node group scale plan](screenshots/24-nodegroup-scale-plan.png)
+
+Terraform generated an execution plan to increase the capacity of the EKS managed node group. The plan updated the scaling configuration, increasing the minimum size from one to two nodes and the maximum size from two to three nodes. This change was required to provide sufficient resources for deploying the Prometheus and Grafana monitoring stack.
+
+**Planned changes:**
+
+- `min_size`: 1 → 2
+- `max_size`: 2 → 3
+- Resources to add: 0
+- Resources to change: 1
+- Resources to destroy: 0
+
+### Figure 23. Monitoring pods remained in a pending state due to insufficient cluster capacity
+
+![Monitoring pods pending](screenshots/23-monitoring-pods-pending.png)
+
+Inspection of the Prometheus pod events revealed repeated `FailedScheduling` warnings. Kubernetes reported that no additional capacity was available on the cluster and that the incoming pods could not be scheduled. This indicated that the single-node EKS cluster lacked sufficient resources to host the monitoring stack and motivated scaling the managed node group.
+
+The pod events included the following message:
+
+
+### Figure 25. Initial node group scaling attempt failed due to invalid capacity configuration
+
+![Node group scaling error](screenshots/25-nodegroup-scale-error.png)
+
+Terraform attempted to modify the EKS managed node group, but AWS rejected the request because the desired capacity remained at one node while the minimum capacity had been increased to two nodes. AWS requires the desired capacity to be greater than or equal to the minimum size.
+
+The following error was returned:
+
+```text
+InvalidParameterException:
+Minimum capacity 2 can't be greater than desired size 1
+```
+
+### Figure 26. Corrected Terraform plan following node group configuration reconciliation
+
+![Figure 26: Successful Terraform plan following node group configuration reconciliation](screenshots/26-node-group-scaling-corrected-plan.png)
+
+Following correction of the node group capacity configuration, Terraform successfully generated an execution plan for the EKS managed node group. The plan indicated an in-place modification of the node group's scaling parameters, increasing the maximum capacity from two to three worker nodes while maintaining the current desired and minimum capacities. This validated that the infrastructure state and the live AWS configuration had been synchronised prior to applying the scaling changes.
+
+### Figure 27. Successful application of node group scaling changes
+
+![Figure 27: Successful application of EKS node group scaling changes](screenshots/27-node-group-scaling-success.png)
+
+Terraform successfully applied the updated EKS managed node group configuration after reconciling the capacity settings. The node group modification completed after approximately 45 seconds, and Terraform reported that one infrastructure resource had been updated without requiring any additional resources to be created or destroyed. This confirmed that the cluster scaling operation had been executed successfully and that the infrastructure state remained consistent.
+
+
 ---
 
 ### Monitoring
