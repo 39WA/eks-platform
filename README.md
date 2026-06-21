@@ -607,6 +607,35 @@ Following correction of the node group capacity configuration, Terraform success
 
 Terraform successfully applied the updated EKS managed node group configuration after reconciling the capacity settings. The node group modification completed after approximately 45 seconds, and Terraform reported that one infrastructure resource had been updated without requiring any additional resources to be created or destroyed. This confirmed that the cluster scaling operation had been executed successfully and that the infrastructure state remained consistent.
 
+### Figure 28. Successful application of EKS node group scaling changes
+
+![Node group scaling applied successfully](screenshots/28-node-group-scaling-applied.png)
+
+Terraform successfully completed the update of the EKS managed node group. The infrastructure change required approximately 44 seconds and resulted in one resource being modified without creating or destroying additional resources. This confirmed that the scaling configuration had been applied successfully and that the cluster was ready to provision additional worker capacity.
+
+### Figure 29. Cluster state after scaling operation still showed a single worker node
+
+![Single worker node after scaling](../screenshots/29-single-worker-node-after-scaling.png)
+
+**Figure 29:** 
+
+Following the successful Terraform application of the node group scaling changes, the Kubernetes cluster was inspected using `kubectl get nodes -o wide`. Despite Terraform reporting that the infrastructure update had completed successfully, only a single worker node was present and in the Ready state. This indicated that the scaling operation had not yet resulted in the provisioning of an additional node, prompting further investigation into the underlying Auto Scaling Group configuration.
+
+![Node group scaling applied successfully](screenshots/29-single-worker-node-after-scaling.png)
+
+### Figure 30. Auto Scaling Group inspection revealed that desired capacity remained at one node
+
+
+To investigate why only a single worker node was present after the Terraform scaling operation, the underlying AWS Auto Scaling Group configuration was examined. The output showed that the managed node group's Auto Scaling Group had a maximum capacity of three nodes, but both the desired and minimum capacities remained set to one node. This explained why an additional EC2 worker node had not been provisioned despite Terraform previously reporting a successful infrastructure update. The discrepancy indicated that the scaling configuration in AWS had not fully reflected the intended changes, necessitating further investigation into the state of the EKS managed node group.
+
+![Auto Scaling Group capacity inspection](screenshots/30-autoscaling-group-capacity-remained-at-one-node.png)
+
+### Figure 31. Terraform state inspection of the EKS managed node group scaling configuration
+
+
+The Terraform state associated with the EKS managed node group was examined to compare the desired infrastructure configuration with the actual AWS Auto Scaling Group settings. By inspecting the `scaling_config` block stored in Terraform state, it was possible to determine whether the discrepancy originated from Terraform itself or from drift between Terraform state and the live AWS environment. This comparison formed the basis for subsequent troubleshooting and reconciliation of the node group scaling configuration.
+
+![Terraform state scaling configuration](screenshots/31-terraform-state-scaling-configuration.png)
 
 ---
 
