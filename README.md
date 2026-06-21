@@ -659,4 +659,75 @@ Prior to deploying the monitoring stack, the local Helm repositories were refres
 
 ![Helm repository update](screenshots/33-helm-repository-update.png)
 
+
+### Figure 34. Initial deployment of the kube-prometheus-stack failed during pre-installation
+
+An initial attempt was made to deploy the `kube-prometheus-stack` Helm chart into the `monitoring` namespace. During the pre-installation phase, Helm reported a timeout while waiting for the `prometheus-kube-prometheus-admission-create` job to complete. The installation terminated with a `context deadline exceeded` error, indicating that the admission controller creation job remained in progress. This failure required further investigation before the monitoring stack could be successfully deployed.
+
+![Initial kube-prometheus-stack installation failure](screenshots/34-kube-prometheus-stack-installation-failure.png)
+
+
+### Figure 35. Inspection of monitoring jobs and pods following kube-prometheus-stack installation failure
+
+Following the unsuccessful deployment of the kube-prometheus-stack, the state of the monitoring namespace was examined using Kubernetes commands. The output showed that several monitoring components, including Prometheus Operator and Node Exporter, were running successfully, whereas Grafana, Alertmanager, Prometheus, and admission-related pods remained in a pending state. Additionally, the admission creation job was still active, explaining why Helm reported a timeout during the pre-installation phase. This investigation confirmed that the deployment had been only partially completed and required remediation before the monitoring stack could become fully operational.
+
+![Monitoring namespace pod status after installation failure](screenshots/35-monitoring-pod-status-after-installation-failure.png)
+
+### Figure 36. Helm deployment failure caused by an existing Prometheus release
+
+Following the initial installation timeout, a subsequent attempt to deploy the kube-prometheus-stack failed because Helm detected that the release name **prometheus** was already present within the monitoring namespace. Helm reported that the release name could not be reused while the previous deployment remained in an incomplete state. This highlighted the need to clean up or recover the existing release before redeployment could proceed successfully.
+
+![Prometheus release name conflict](screenshots/36-prometheus-release-name-conflict.png)
+
+### Figure 37. Removal of the failed Prometheus Helm release
+
+
+Before attempting a fresh deployment of the monitoring stack, the incomplete Prometheus release was removed from the monitoring namespace using Helm. This cleanup operation eliminated the residual resources associated with the previous failed installation and resolved the release name conflict that prevented subsequent deployments. Removing the existing release ensured that a new installation could proceed without inconsistencies in the Helm release state.
+
+![Removal of failed Prometheus release](screenshots/37-remove-failed-prometheus-release.png)
+
+### Figure 38. Reinstallation attempt failed due to an incomplete admission job
+
+
+After removing the failed Helm release, a fresh installation of the kube-prometheus-stack was attempted. However, the deployment again failed because the admission-create job within the monitoring namespace remained in progress and did not complete before the Helm timeout expired. The error indicated that the admission webhook resources required by the Prometheus Operator had not reached a ready state, preventing the installation from completing successfully. This demonstrated that residual resources from previous attempts continued to interfere with the deployment process and required further cleanup before a successful installation could be achieved.
+
+![Prometheus reinstallation failure caused by admission job timeout](screenshots/38-prometheus-reinstallation-failed-admission-job.png)
+
+### Figure 39. Cleanup of residual monitoring resources following repeated deployment failures
+
+
+After repeated failures during the deployment of the kube-prometheus-stack, residual resources within the monitoring namespace were removed to restore a consistent cluster state. Existing Kubernetes jobs and pods associated with the previous installation attempts were deleted, and the incomplete Helm release was uninstalled successfully. This cleanup operation eliminated stale resources and release metadata that had prevented subsequent deployments from completing successfully, thereby preparing the cluster for a fresh installation of the monitoring stack.
+
+![Cleanup of residual monitoring resources](screenshots/39-cleanup-of-residual-monitoring-resources.png)
+
+### Figure 40. Repeated kube-prometheus-stack installation failure caused by admission job timeout
+
+
+Following the cleanup of residual monitoring resources, another attempt was made to deploy the kube-prometheus-stack using Helm. However, the installation again failed because the admission-create job responsible for configuring the Prometheus Operator webhook resources remained in progress and did not reach a ready state before the Helm timeout expired. Despite removing previous releases and deleting associated pods and jobs, the persistent timeout indicated that additional investigation into the admission controller resources and namespace state was required before a successful deployment could be achieved.
+
+
+![Repeated kube-prometheus-stack installation failure](screenshots/40-repeated-prometheus-installation-failure.png)
+
+### Figure 41. Cleanup of monitoring namespace following failed Prometheus installation
+
+Following repeated failures during deployment of the kube-prometheus-stack, residual monitoring resources were removed to restore a clean cluster state. Existing jobs, pods, and the monitoring namespace were deleted, and Helm releases were uninstalled. Verification messages confirmed that the namespace and release no longer existed, indicating that stale resources had been successfully removed. This cleanup prepared the Kubernetes cluster for a fresh installation of the monitoring stack.
+
+![Cleanup of monitoring namespace](screenshots/41-monitoring-namespace-cleanup.png)
+
+### Figure 42. Successful deployment of the kube-prometheus-stack
+
+
+After removing residual resources and recreating the monitoring namespace, the kube-prometheus-stack was successfully deployed using Helm. The installation completed successfully and Helm reported the release status as **deployed**. This installation provided the core monitoring components, including Prometheus, Alertmanager, Grafana, node exporters, and Kubernetes state metrics collectors, forming the foundation of the cluster observability platform.
+
+![Successful kube-prometheus-stack installation](screenshots/42-kube-prometheus-stack-successful-installation.png)
+
+
+### Figure 43. Fresh monitoring namespace confirmed before redeployment
+
+Following the removal of the previous Prometheus deployment and deletion of the monitoring namespace, a verification command was executed using `kubectl get pods -n monitoring`. The output indicated that no resources were present in the namespace, confirming that all residual components from the failed installation had been successfully removed. This clean state ensured that the subsequent deployment of the kube-prometheus-stack could proceed without conflicts caused by stale resources or admission webhook jobs.
+
+![Fresh monitoring namespace verification](screenshots/43-monitoring-namespace-clean.png)
+
+
+
 ---
