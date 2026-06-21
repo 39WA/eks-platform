@@ -645,4 +645,18 @@ The Terraform state associated with the EKS managed node group was examined to c
 - Grafana
 - Kubernetes Dashboards
 
+### Figure 32. Verifying the Prometheus Helm repository configuration
+
+Prior to deploying the monitoring stack, the Prometheus Community Helm repository was configured and verified. Since the repository had already been added previously, Helm reported that the existing configuration was detected and no further action was required. This confirmed that the repository containing the `kube-prometheus-stack` chart was available for subsequent installation of Prometheus, Alertmanager, and Grafana components within the EKS cluster.
+
+![Prometheus Helm repository configuration](screenshots/32-add-prometheus-helm-repository.png)
+
+### Figure 33. Updating Helm chart repositories before monitoring stack deployment
+
+![Helm repository update](../screenshots/33-helm-repository-update.png)
+Prior to deploying the monitoring stack, the local Helm repositories were refreshed to retrieve the latest chart definitions. The update process successfully synchronised both the Prometheus Community repository and the ingress-nginx repository, ensuring that the most recent versions of the charts were available for installation. The successful completion of the update process confirmed that the environment was prepared for deployment of the `kube-prometheus-stack`.
+
+
+![Helm repository update](screenshots/33-helm-repository-update.png)
+
 ---
