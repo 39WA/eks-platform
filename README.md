@@ -729,5 +729,117 @@ Following the removal of the previous Prometheus deployment and deletion of the 
 ![Fresh monitoring namespace verification](screenshots/43-monitoring-namespace-clean.png)
 
 
+### Figure 44. Post-installation failure during kube-prometheus-stack deployment
 
+A subsequent attempt to deploy the kube-prometheus-stack failed during the post-installation phase. Helm reported that the admission webhook patch job remained in progress and eventually exceeded the timeout period. This indicated that residual webhook resources or incomplete cleanup from previous deployments were still preventing the monitoring stack from being installed successfully, requiring additional namespace and resource cleanup before retrying the deployment.
+
+![Post-installation failure of kube-prometheus-stack](screenshots/44-kube-prometheus-stack-post-install-failure.png)
+
+
+**Figure 44:** 
+
+Successful deployment of the Prometheus monitoring stack using the `kube-prometheus-stack` Helm chart. The output confirms that Prometheus custom resources were created and Grafana access information was generated after the Helm installation completed successfully.
+
+![Figure 44: Successful Deployment of the Prometheus Monitoring Stack on Amazon EKS](screenshots/44-prometheus-stack-successful-installation.png)
+
+
+**Figure 45:** 
+
+Verification of the Prometheus monitoring components deployed in the Kubernetes monitoring namespace. The output confirms that Grafana, kube-state-metrics, and node-exporter pods are running, while the Prometheus operator and admission patch components are still initializing.
+
+![Figure 45: Verification of Prometheus Monitoring Pods in the Monitoring Namespace](screenshots/45-prometheus-pods-verification.png)
+
+
+
+**Figure 46:** 
+
+Verification of services created by the Prometheus monitoring stack within the monitoring namespace. The output confirms the availability of Grafana, Alertmanager, Prometheus Server, Prometheus Operator, kube-state-metrics, and node-exporter services, demonstrating successful deployment of the monitoring infrastructure.
+
+![Figure 46: Verification of Prometheus Monitoring Services in the Monitoring Namespace](screenshots/46-prometheus-services-verification.png)
+
+
+**Figure 47:** 
+
+Retrieval of the Grafana administrator credentials from the Kubernetes secret resource in the monitoring namespace. The command decodes the base64-encoded password stored in the `prometheus-grafana` secret, which is required for accessing the Grafana dashboard.
+
+![Figure 47: Retrieval of Grafana Administrator Credentials](screenshots/47-grafana-admin-password.png)
+
+
+**Figure 48:** 
+
+Port forwarding configuration for the Grafana service in the monitoring namespace. The command maps port 3000 on the local machine to port 80 of the Grafana service, enabling secure access to the Grafana web interface through a browser.
+
+![Figure 48: Port Forwarding for Access to the Grafana Dashboard](screenshots/48-grafana-port-forward.png)
+
+
+**Figure 49:** 
+Grafana login interface accessed through the local port-forwarded connection. The dashboard prompts for administrator credentials to authenticate and gain access to the monitoring environment.
+
+![Figure 49: Grafana Login Interface](screenshots/49-grafana-login-page.png)
+
+
+**Figure 50:** 
+Successful authentication to the Grafana monitoring dashboard using the administrator credentials retrieved from the Kubernetes secret resource. The Grafana home interface confirms that the monitoring platform is accessible and ready for visualization and analysis of Kubernetes cluster metrics.
+
+![Figure 50: Successful Authentication to the Grafana Monitoring Dashboard](screenshots/50-grafana-dashboard-home.png)
+
+
+
+**Figure 51:** 
+Verification of the Prometheus data source configuration within Grafana. The Prometheus data source is provisioned automatically by the kube-prometheus-stack deployment and configured as the default source for collecting and visualizing Kubernetes cluster metrics. This integration enables Grafana dashboards to query monitoring data from the Prometheus server.
+
+![Figure 51: Verification of the Prometheus Data Source Configuration](screenshots/51-prometheus-datasource-configuration.png)
+
+
+
+**Figure 52:** 
+Grafana import dashboard interface used to add predefined monitoring dashboards. The interface allows dashboard definitions to be imported either from Grafana.com using a dashboard ID or through JSON files, enabling the deployment of Kubernetes monitoring visualizations based on Prometheus metrics.
+
+![Figure 52: Import Dashboard Interface for Kubernetes Monitoring Visualization](screenshots/52-import-dashboard-interface.png)
+
+
+**Figure 53:** 
+Grafana retrieved the Kubernetes Cluster Monitoring dashboard from Grafana.com and displayed its configuration options. The dashboard metadata, folder location, unique identifier, and Prometheus datasource selection were presented before importing the dashboard into Grafana for cluster visualization.
+
+![Figure 53: Loading the Kubernetes Monitoring Dashboard from Grafana.com](screenshots/53-load-kubernetes-dashboard-grafana.png)
+
+
+**Figure 54:** 
+Grafana displayed the import options for the Kubernetes Cluster Monitoring dashboard. The dashboard configuration included the folder location and datasource selection field (DS_PROMETHEUS). The interface indicated that a Prometheus datasource must be selected before the dashboard could be imported successfully.
+
+![Figure 54: Selecting the Prometheus Datasource Before Dashboard Import](imscreenshotsages/54-select-prometheus-datasource-before-import.png)
+
+
+**Figure 55:** 
+During the dashboard import process, Grafana displayed the available datasource options. The default Prometheus datasource was selected to provide cluster metrics for the Kubernetes Cluster Monitoring dashboard before completing the import operation.
+
+![Figure 55: Prometheus Datasource Selected for Dashboard Import](images/55-prometheus-datasource-selected.png)
+
+
+**Figure 56:**
+Grafana successfully imported the Kubernetes Cluster Monitoring dashboard using Prometheus as the datasource. The dashboard displayed cluster monitoring panels, including network I/O pressure, cluster memory usage, CPU usage, and filesystem usage metrics. At the time of capture, several panels reported no data or unavailable values while metrics collection was still initializing.
+
+![Figure 56: Kubernetes Cluster Monitoring Dashboard Imported into Grafana](screenshots/56-kubernetes-monitoring-dashboard-imported.png)
+
+
+
+**Figure 57:** The Grafana web interface was successfully accessed through the local port-forwarded connection (`http://localhost:3000`). The Grafana Home page confirms that the monitoring visualization platform is operational and ready for dashboard configuration and metric visualization.
+
+![Figure 57: Successful Access to the Grafana Web Interface](screenshots/57-grafana-home-page.png)
+
+
+**Figure 58:** Grafana successfully retrieved the Kubernetes monitoring dashboard from Grafana.com. The dashboard metadata, including its name, publisher, update information, and import options, was displayed before selecting the Prometheus data source and completing the dashboard import.
+
+![Figure 58: Successful Retrieval of Kubernetes Monitoring Dashboard from Grafana.com](screenshot/58-grafana-dashboard-import.png)
+
+
+**Figure 59:** The Prometheus data source was selected for the imported Kubernetes monitoring dashboard before completing the import process. Associating the dashboard with the Prometheus data source enables Grafana to retrieve and visualize cluster metrics collected by Prometheus.
+
+![Figure 59: Selection of the Prometheus Data Source for Dashboard Import](screenshots/59-prometheus-datasource-selection.png)
+
+
+**Figure 60:** The Kubernetes monitoring dashboard was successfully imported into Grafana and linked to the Prometheus data source. The dashboard displays predefined monitoring panels for CPU usage, memory usage, and Kubernetes resource statistics, providing a centralized interface for visualizing cluster metrics collected by Prometheus.
+
+
+![Figure 60: Imported Kubernetes Monitoring Dashboard in Grafana](screenshots/60-imported-kubernetes-dashboard.png)
 ---
