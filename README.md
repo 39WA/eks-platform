@@ -722,14 +722,16 @@ After removing residual resources and recreating the monitoring namespace, the k
 
 Following the removal of the previous Prometheus deployment and deletion of the monitoring namespace, a verification command was executed using `kubectl get pods -n monitoring`. The output indicated that no resources were present in the namespace, confirming that all residual components from the failed installation had been successfully removed. This clean state ensured that the subsequent deployment of the kube-prometheus-stack could proceed without conflicts caused by stale resources or admission webhook jobs.
 
-![Fresh monitoring namespace verification](screenshots/43-monitoring-namespace-clean.png)
+![Fresh monitoring namespace verification](43-monitoring-namespace-clean.png)
 
 
-### Figure 44. Initial kube-prometheus-stack Helm Installation Failure During Post-installation :** 
 
-The first attempt to deploy the `kube-prometheus-stack` Helm chart did not complete successfully. The installation failed during the post-installation phase because the `prometheus-kube-prometheus-admission-patch` Kubernetes Job remained in progress and exceeded the default timeout period. This issue was investigated and resolved by verifying the monitoring namespace resources before repeating the deployment.
 
-![Initial kube-prometheus-stack Helm installation failure](screenshots/44-kube-prometheus-stack-installation-failure.png)
+### Figure 44. Initial kube-prometheus-stack Helm Installation Failure
+
+The initial deployment of the `kube-prometheus-stack` Helm chart did not complete successfully. During the post-installation phase, the `prometheus-kube-prometheus-admission-patch` Kubernetes Job remained in progress and exceeded the default timeout period, causing the installation to fail. The issue was investigated by verifying the monitoring namespace resources before redeploying the monitoring stack successfully.
+
+![Initial kube-prometheus-stack Helm installation failure](screenshots/44-kube-prometheus-stack-post-install-failure.png)
 
 
 **Figure 45:** 
@@ -788,7 +790,8 @@ Grafana import dashboard interface used to add predefined monitoring dashboards.
 
 ### Figure 53. Retrieved Kubernetes Monitoring Dashboard from Grafana.com :** 
 
-After entering the dashboard ID, Grafana successfully retrieved the Kubernetes monitoring dashboard definition from Grafana.com. The dashboard metadata and configuration options were displayed, allowing the Prometheus data source to be selected before completing the import.
+
+After entering the Kubernetes monitoring dashboard ID, Grafana successfully retrieved the dashboard definition from Grafana.com. The dashboard metadata, including the publisher and available configuration options, was displayed. This confirmed that the dashboard was ready for configuration before selecting the Prometheus data source and completing the import.
 
 ![Retrieved Kubernetes monitoring dashboard from Grafana.com](screenshots/53-retrieved-grafana-dashboard.png)
 
