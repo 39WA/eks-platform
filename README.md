@@ -650,7 +650,6 @@ Prior to deploying the monitoring stack, the Prometheus Community Helm repositor
 
 ### Figure 33. Updating Helm chart repositories before monitoring stack deployment
 
-![Helm repository update](../screenshots/33-helm-repository-update.png)
 Prior to deploying the monitoring stack, the local Helm repositories were refreshed to retrieve the latest chart definitions. The update process successfully synchronised both the Prometheus Community repository and the ingress-nginx repository, ensuring that the most recent versions of the charts were available for installation. The successful completion of the update process confirmed that the environment was prepared for deployment of the `kube-prometheus-stack`.
 
 
@@ -726,11 +725,11 @@ Following the removal of the previous Prometheus deployment and deletion of the 
 ![Fresh monitoring namespace verification](screenshots/43-monitoring-namespace-clean.png)
 
 
-**Figure 44:** 
+### Figure 44. Initial kube-prometheus-stack Helm Installation Failure During Post-installation :** 
 
-Successful deployment of the Prometheus monitoring stack using the `kube-prometheus-stack` Helm chart. The output confirms that Prometheus custom resources were created and Grafana access information was generated after the Helm installation completed successfully.
+The first attempt to deploy the `kube-prometheus-stack` Helm chart did not complete successfully. The installation failed during the post-installation phase because the `prometheus-kube-prometheus-admission-patch` Kubernetes Job remained in progress and exceeded the default timeout period. This issue was investigated and resolved by verifying the monitoring namespace resources before repeating the deployment.
 
-![Figure 44: Successful Deployment of the Prometheus Monitoring Stack on Amazon EKS](screenshots/44-prometheus-stack-successful-installation.png)
+![Initial kube-prometheus-stack Helm installation failure](screenshots/44-kube-prometheus-stack-installation-failure.png)
 
 
 **Figure 45:** 
@@ -781,17 +780,17 @@ Verification of the Prometheus data source configuration within Grafana. The Pro
 ![Figure 51: Verification of the Prometheus Data Source Configuration](screenshots/51-prometheus-datasource-configuration.png)
 
 
-
 **Figure 52:** 
 Grafana import dashboard interface used to add predefined monitoring dashboards. The interface allows dashboard definitions to be imported either from Grafana.com using a dashboard ID or through JSON files, enabling the deployment of Kubernetes monitoring visualizations based on Prometheus metrics.
 
 ![Figure 52: Import Dashboard Interface for Kubernetes Monitoring Visualization](screenshots/52-import-dashboard-interface.png)
 
 
-**Figure 53:** 
-Grafana retrieved the Kubernetes Cluster Monitoring dashboard from Grafana.com and displayed its configuration options. The dashboard metadata, folder location, unique identifier, and Prometheus datasource selection were presented before importing the dashboard into Grafana for cluster visualization.
+### Figure 53. Retrieved Kubernetes Monitoring Dashboard from Grafana.com :** 
 
-![Figure 53: Loading the Kubernetes Monitoring Dashboard from Grafana.com](screenshots/53-load-kubernetes-dashboard-grafana.png)
+After entering the dashboard ID, Grafana successfully retrieved the Kubernetes monitoring dashboard definition from Grafana.com. The dashboard metadata and configuration options were displayed, allowing the Prometheus data source to be selected before completing the import.
+
+![Retrieved Kubernetes monitoring dashboard from Grafana.com](screenshots/53-retrieved-grafana-dashboard.png)
 
 
 **Figure 54:** 
