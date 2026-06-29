@@ -544,20 +544,14 @@ Checkov performs policy-based scanning against Terraform code and provides immed
 ![Checkov Findings](screenshots/22-checkov-findings.png)
 
 
-### Checkov Security Findings
+### Figure 23. Monitoring pods remained in a pending state due to insufficient cluster capacity
 
-Checkov performs Infrastructure-as-Code (IaC) security scanning during CI/CD execution and provides policy-based validation of Terraform resources. The scan identified supply-chain security findings by enforcing immutable Terraform module sources and highlighting configuration issues early in the deployment pipeline.
 
-**Security Capabilities**
+Inspection of the Prometheus pod events revealed repeated `FailedScheduling` warnings. Kubernetes reported that no additional capacity was available on the cluster and that the incoming pods could not be scheduled. This indicated that the single-node EKS cluster lacked sufficient resources to host the monitoring stack and motivated scaling the managed node group.
 
-- Static analysis of Terraform code
-- Policy-as-Code enforcement
-- Continuous security validation
-- Supply-chain security checks
-- Early detection of configuration risks
+The pod events included the following message:
 
-![Checkov Findings](screenshots/22-checkov-findings.png)
-
+![Monitoring pods pending](screenshots/23-monitoring-pods-pending.png)
 
 ### Figure 24. Terraform plan for scaling the EKS managed node group
 
@@ -573,13 +567,7 @@ Terraform generated an execution plan to increase the capacity of the EKS manage
 - Resources to change: 1
 - Resources to destroy: 0
 
-### Figure 23. Monitoring pods remained in a pending state due to insufficient cluster capacity
 
-![Monitoring pods pending](screenshots/23-monitoring-pods-pending.png)
-
-Inspection of the Prometheus pod events revealed repeated `FailedScheduling` warnings. Kubernetes reported that no additional capacity was available on the cluster and that the incoming pods could not be scheduled. This indicated that the single-node EKS cluster lacked sufficient resources to host the monitoring stack and motivated scaling the managed node group.
-
-The pod events included the following message:
 
 
 ### Figure 25. Initial node group scaling attempt failed due to invalid capacity configuration
@@ -722,7 +710,7 @@ After removing residual resources and recreating the monitoring namespace, the k
 
 Following the removal of the previous Prometheus deployment and deletion of the monitoring namespace, a verification command was executed using `kubectl get pods -n monitoring`. The output indicated that no resources were present in the namespace, confirming that all residual components from the failed installation had been successfully removed. This clean state ensured that the subsequent deployment of the kube-prometheus-stack could proceed without conflicts caused by stale resources or admission webhook jobs.
 
-![Fresh monitoring namespace verification](43-monitoring-namespace-clean.png)
+![Fresh monitoring namespace verification](screenshots/43-monitoring-namespace-clean.png)
 
 
 
@@ -788,7 +776,7 @@ Grafana import dashboard interface used to add predefined monitoring dashboards.
 ![Figure 52: Import Dashboard Interface for Kubernetes Monitoring Visualization](screenshots/52-import-dashboard-interface.png)
 
 
-### Figure 53. Retrieved Kubernetes Monitoring Dashboard from Grafana.com :** 
+### Figure 53. Retrieved Kubernetes Monitoring Dashboard from Grafana.com
 
 
 After entering the Kubernetes monitoring dashboard ID, Grafana successfully retrieved the dashboard definition from Grafana.com. The dashboard metadata, including the publisher and available configuration options, was displayed. This confirmed that the dashboard was ready for configuration before selecting the Prometheus data source and completing the import.
